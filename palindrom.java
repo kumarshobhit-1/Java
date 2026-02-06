@@ -4,8 +4,7 @@ public class palindrom {
         int palindrome = number; // copied number into variable
         int reverse = 0;
         while (palindrome != 0) {
-            int remainder = palindrome % 10;
-            reverse = reverse * 10 + remainder;
+            reverse = reverse * 10 + palindrome % 10;
             palindrome = palindrome / 10;
         }
         if (number == reverse) {

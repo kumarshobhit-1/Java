@@ -1,5 +1,5 @@
 interface Bicycle{
-    int a = 4;
+    // int a = 4;
     void applyBreak(int decrement);
     void speedUp(int increment);
 }
@@ -40,5 +40,6 @@ public class Interfaces {
 
         cycleHarry.blowHornk3g();
         cycleHarry.blowHornmhn();
+        cycleHarry.blowHorn();
     }
 }

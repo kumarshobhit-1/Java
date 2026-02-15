@@ -8,16 +8,16 @@ interface childSampleInterface extends sampleInterface{
     void meth4();
 }
 class MySampleClass implements childSampleInterface{
-    public void meth1(){
+    @Override public void meth1(){
         System.out.println("Good Morning");
     }
-    public void meth2(){
+    @Override public void meth2(){
         System.out.println("Good Afternoon");
     }
-    public void meth3(){
+    @Override public void meth3(){
         System.out.println("Good Evening");
     }
-    public void meth4(){
+    @Override public void meth4(){
         System.out.println("Good Night");
     }
 }

@@ -2,9 +2,9 @@ public class oops {
     public static void main(String[] args) {
         MyPen p1 = new MyPen(); // created a pen object called p1
         p1.setColor("blue");
-        System.out.println(p1.color);
+        System.out.println(p1.getColor());
         p1.setTip(6);
-        System.out.println(p1.tip);
+        System.out.println(p1.getTip());
 
         Student s1 = new Student(); //created student object
         s1.setAge(15);
@@ -17,11 +17,19 @@ public class oops {
 }
 
 class MyPen { // class of pen
-    String color;
-    int tip;
+    private String color;
+    private int tip;
+
+    String getColor(){
+        return this.color;
+    }
+
+    int getTip(){
+        return this.tip;
+    }
 
     void setColor(String newColor) {
-        color = newColor;
+        this.color = newColor;
     }
 
     void setTip(int newTip){

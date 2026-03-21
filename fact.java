@@ -4,7 +4,7 @@ public class fact {
         if (n == 0) {
             return 1;
         }
-        int fnm = fact1(n);
+        // int fnm = fact1(n);
         int fn = n * fact1(n-1);
         return fn;
     }

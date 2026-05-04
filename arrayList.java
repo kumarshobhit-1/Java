@@ -10,6 +10,8 @@ public class arrayList {
         list.add(3);
         list.add(4);
 
+        System.out.println(list.size());
+
         list.add(1, 9); //ye ek perticular index pe value dal dete hai baki ke indexes ko aagee bda deta hai
         System.out.println(list);
 
@@ -29,5 +31,13 @@ public class arrayList {
         // contains operation - big 0(n) (linear time me perform hota hai)
         System.out.println(list.contains(3)); // true because of 3 array me exist karta hai
         System.out.println(list.contains(11)); // flase because of 11 array me exist karta hai
+
+
+        System.out.println(list.size()); // size of arrayList
+        // print the arrayList using size
+        for(int i=0; i<list.size(); i++){
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
     }
 }

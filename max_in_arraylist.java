@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class max_in_arraylist {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
 
         list.add(2);

@@ -10,10 +10,15 @@ public class sort_arrayList {
         list.add(3);
         list.add(6);
         
-        System.out.println(list);
-        Collections.sort(list);
-        System.out.println(list);
-        
+        System.out.println("Original List : "+list);
+        Collections.sort(list); //ascending order
+        System.out.println("Ascending order : " + list);
+
+        // Descending order
+        Collections.sort(list, Collections.reverseOrder()); // reverseOrder() -: (sort ka logic defined karta hai )Returns a comparator that imposes the reverse of the natural ordering on a collection of objects that implement the Comparable interface.
+        System.out.println("Dscending order : " + list);
+
+
     }
 }
 

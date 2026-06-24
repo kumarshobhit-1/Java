@@ -14,7 +14,9 @@ public class pairSum_one {
     }
 
     // Two pointer 
-    public
+    public static boolean pairSumOne(ArrayList<Integer> list, int target){
+        
+    }
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
 

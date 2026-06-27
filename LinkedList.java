@@ -53,15 +53,6 @@ public class LinkedList{
         tail = newNode;
     }
 
-    public void print(){
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data+" -> ");
-            temp = temp.next;
-        }
-        System.out.println("null");
-    }
-
     public void addMiddle(int idx, int data){
         if (idx == 0) {
             addFirst(data);
@@ -81,6 +72,17 @@ public class LinkedList{
         newNode.next = temp.next;
         temp.next = newNode;
     }
+
+    public void print(){
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data+" -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.print();

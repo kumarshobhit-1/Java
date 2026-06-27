@@ -15,7 +15,24 @@ public class pairSum_one {
 
     // Two pointer 
     public static boolean pairSumOne(ArrayList<Integer> list, int target){
-        
+        int lp = 0;
+        int rp = list.size()-1;
+
+        while (lp != rp) {
+            // case 1
+            if (list.get(lp) + list.get(rp) == target) {
+                return true;
+            }
+
+            // case 2
+            if (list.get(lp) + list.get(rp) < target) {
+                lp++;
+            } else {
+                //case 3
+                rp--;
+            }
+        }
+        return false;
     }
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -27,7 +44,8 @@ public class pairSum_one {
         list.add(5);
         list.add(6);
 
-        int target = 5;
+        int target = 50;
         System.out.println(pairSum1(list, target));
+        System.out.println(pairSumOne(list, target));
     }
 }

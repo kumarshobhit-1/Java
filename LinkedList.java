@@ -203,6 +203,19 @@ public class LinkedList{
         return;
     }
 
+
+    // Slow fast approach
+    public Node findMid(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next; //+1
+            fast = fast.next.next;
+        }
+        return slow; // slow is my midNode
+    }
+
     // printing the linked list
     public void print(){
         Node temp = head;

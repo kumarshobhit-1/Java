@@ -205,7 +205,7 @@ public class LinkedList{
 
 
     // Slow fast approach
-    public Node findMid(Node head){
+    public Node findMid(Node head){ // helper function
         Node slow = head;
         Node fast = head;
 
@@ -214,6 +214,43 @@ public class LinkedList{
             fast = fast.next.next;
         }
         return slow; // slow is my midNode
+    }
+
+
+    // check Palindrom
+    public boolean checkPalindrome(){
+        if (head == null || head.next == null) {
+            return true;
+        }
+
+        // step 1 find mid
+        Node midNode = findMid(head);
+
+        //step2 reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node right = prev; // right half head
+        Node left = head;
+
+        //step 3 - check left half & right half
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
     }
 
     // printing the linked list
@@ -229,17 +266,17 @@ public class LinkedList{
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
-        ll.addLast(5);
-        ll.print();
-        ll.addMiddle(2, 3);
-        ll.print();
+        // ll.print();
+        // ll.addFirst(2);
+        // ll.print();
+        // ll.addFirst(1);
+        // ll.print();
+        // ll.addLast(4);
+        // ll.print();
+        // ll.addLast(5);
+        // ll.print();
+        // ll.addMiddle(2, 3);
+        // ll.print();
 
         // ll.removeFirst();
         // ll.print();
@@ -256,8 +293,16 @@ public class LinkedList{
         // ll.reverseLinkedList();
         // ll.print();
 
-        ll.deleteNthfromEnd(3);
+        // ll.deleteNthfromEnd(3);
+        // ll.print();
+
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(2);
+        ll.addLast(1);
         ll.print();
+
+        System.out.println(ll.checkPalindrome());
     }
 
 

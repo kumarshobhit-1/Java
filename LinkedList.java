@@ -157,6 +157,23 @@ public class LinkedList{
         return helper(head, key);
     }
 
+
+    // reverse linked list fuction
+    public void reverseLinkedList(){
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
+
     // printing the linked list
     public void print(){
         Node temp = head;
@@ -191,8 +208,11 @@ public class LinkedList{
 
         // System.out.println(ll.iterativeSearch(3));
         // System.out.println(ll.iterativeSearch(10));
-        System.out.println(ll.recSearch(3));
-        System.out.println(ll.recSearch(10));
+        // System.out.println(ll.recSearch(3));
+        // System.out.println(ll.recSearch(10));
+
+        ll.reverseLinkedList();
+        ll.print();
     }
 
 

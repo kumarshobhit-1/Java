@@ -17,6 +17,7 @@ public class LinkedList{
     public static Node tail;
     public static int size;
 
+    // Add first node in Linked List
     public void addFirst(int data){
         
         //step1 = create new node
@@ -36,6 +37,7 @@ public class LinkedList{
 
     }
 
+    // Add Last node in Linked List
     public void addLast(int data){
         //step1 = create new node
         Node newNode = new Node(data);
@@ -53,6 +55,7 @@ public class LinkedList{
         tail = newNode;
     }
 
+    // Add middle node in Linked List
     public void addMiddle(int idx, int data){
         if (idx == 0) {
             addFirst(data);
@@ -73,6 +76,7 @@ public class LinkedList{
         temp.next = newNode;
     }
 
+    // Remove first node in Linked List
     public int removeFirst(){
         if (size == 0) {
             System.out.println("LL is empty");
@@ -88,6 +92,8 @@ public class LinkedList{
         size--;
         return val;
     }
+
+    // Remove Last node in Linked List
     public int removeLast(){
         if (size == 0) {
             System.out.println("LL is empty");
@@ -111,6 +117,7 @@ public class LinkedList{
     }
 
 
+    // Iterative Search in the linked list
     public int iterativeSearch(int key){
         Node temp = head;
         int i = 0;
@@ -127,7 +134,7 @@ public class LinkedList{
         return -1;
     }
 
-
+    // helper function with Recursive Search in Linked List
     public int helper(Node head, int key){
         if (head == null) {
             return -1;
@@ -144,11 +151,13 @@ public class LinkedList{
 
         return idx+1;
     }
-
+    
+    // Recrsive search function 
     public int recSearch(int key){
         return helper(head, key);
     }
 
+    // printing the linked list
     public void print(){
         Node temp = head;
         while (temp != null) {

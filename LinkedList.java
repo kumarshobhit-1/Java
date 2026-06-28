@@ -110,6 +110,23 @@ public class LinkedList{
         return val;
     }
 
+
+    public int iterativeSearch(int key){
+        Node temp = head;
+        int i = 0;
+
+        while (temp != null) {
+            if (temp.data == key) { // key found
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+
+        //key not found
+        return -1;
+    }
+
     public void print(){
         Node temp = head;
         while (temp != null) {
@@ -140,6 +157,9 @@ public class LinkedList{
         ll.print();
 
         System.out.println("size of linked list is -: " + ll.size);
+
+        System.out.println(ll.iterativeSearch(3));
+        System.out.println(ll.iterativeSearch(10));
     }
 
 

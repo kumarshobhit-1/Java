@@ -127,6 +127,28 @@ public class LinkedList{
         return -1;
     }
 
+
+    public int helper(Node head, int key){
+        if (head == null) {
+            return -1;
+        }
+
+        if (head.data == key) {
+            return 0;
+        }
+
+        int idx = helper(head.next, key);
+        if (idx == -1) {
+            return -1;
+        }
+
+        return idx+1;
+    }
+
+    public int recSearch(int key){
+        return helper(head, key);
+    }
+
     public void print(){
         Node temp = head;
         while (temp != null) {
@@ -151,15 +173,17 @@ public class LinkedList{
         ll.addMiddle(2, 3);
         ll.print();
 
-        ll.removeFirst();
-        ll.print();
-        ll.removeLast();
-        ll.print();
+        // ll.removeFirst();
+        // ll.print();
+        // ll.removeLast();
+        // ll.print();
 
-        System.out.println("size of linked list is -: " + ll.size);
+        // System.out.println("size of linked list is -: " + ll.size);
 
-        System.out.println(ll.iterativeSearch(3));
-        System.out.println(ll.iterativeSearch(10));
+        // System.out.println(ll.iterativeSearch(3));
+        // System.out.println(ll.iterativeSearch(10));
+        System.out.println(ll.recSearch(3));
+        System.out.println(ll.recSearch(10));
     }
 
 

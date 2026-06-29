@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class stackB {
+public class stackB_ArrayList {
     static class Stack{
         static ArrayList<Integer> list = new ArrayList<>();
         //isEmpty

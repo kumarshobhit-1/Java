@@ -59,6 +59,23 @@ public class DoubleLL {
     //removeLast
     //homework
 
+
+    //Reverse the doubley Linked list
+    public void reverseDLL(){
+        Node curr = head;
+        Node prev = null;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
     // print function
     public void print(){
         Node temp = head;
@@ -77,8 +94,10 @@ public class DoubleLL {
         dll.print();
         System.out.println(dll.size);
 
-        dll.removeFirst();
+        dll.reverseDLL();
         dll.print();
+        // dll.removeFirst();
+        // dll.print();
         System.out.println(dll.size);
     }
 }

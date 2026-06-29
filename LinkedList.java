@@ -372,7 +372,7 @@ public class LinkedList{
         System.out.println("Before Sorting:");
         ll.print();
 
-        ll.head = ll.mergeSort(ll.head);
+        ll.head = ll.mergeSort(ll.head); //O(nlogn)
 
         System.out.println("After Sorting:");
         ll.print();

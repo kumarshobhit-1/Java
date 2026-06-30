@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class maxAreaInHistrogram {
+public class maxAreaInHistrogram { //O(n) - optimized
     public static void maxArea(int arr[]){
         int maxArea = 0;
         int nsr[] = new int[arr.length];

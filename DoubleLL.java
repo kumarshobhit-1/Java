@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class DoubleLL {
     public class Node{
         int data;
@@ -127,15 +125,15 @@ public class DoubleLL {
         dll.addFirst(2);
         dll.addFirst(1);
         dll.print();
-        System.out.println(dll.size);
+        System.out.println(DoubleLL.size);
         dll.addLast(4);
         dll.print();
         dll.addLast(5);
         dll.print();
-        System.out.println(dll.size);
+        System.out.println(DoubleLL.size);
         dll.removeLast();
         dll.print();
-        System.out.println(dll.size);
+        System.out.println(DoubleLL.size);
         
 
         // dll.reverseDLL();

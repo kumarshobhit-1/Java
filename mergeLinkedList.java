@@ -81,7 +81,7 @@ public class mergeLinkedList {
         ll.addFirst(5);
 
         ll.print();
-        ll.head = ll.mergeSort(ll.head);
+        LinkedList.head = ll.mergeSort(LinkedList.head);
 
     }
 }

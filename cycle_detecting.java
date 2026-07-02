@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class cycle_detecting {
         public static class Node{
         Node next;

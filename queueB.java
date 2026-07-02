@@ -67,18 +67,18 @@ public class queueB {
         }
     }
     public static void main(String[] args) {
-        Queue q = new Queue(5);
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        System.out.println(q.remove());
-        q.add(4);
-        System.out.println(q.remove());
-        q.add(5);
+        new Queue(5);
+        Queue.add(1);
+        Queue.add(2);
+        Queue.add(3);
+        System.out.println(Queue.remove());
+        Queue.add(4);
+        System.out.println(Queue.remove());
+        Queue.add(5);
         // 1 2 3
-        while (!q.isEmpty()) {
-            System.out.println(q.peek());
-            q.remove();
+        while (!Queue.isEmpty()) {
+            System.out.println(Queue.peek());
+            Queue.remove();
         }
     }
 }

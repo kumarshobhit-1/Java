@@ -1,3 +1,4 @@
+package greedy;
 import java.util.ArrayList;
 import java.util.Collections;
 public class jobSequencingProblem { // O(nlogn) time complexity

@@ -1,3 +1,4 @@
+package greedy;
 import java.util.Arrays;
 
 public class minAbsoluteDiffPairs { //O(n log n)

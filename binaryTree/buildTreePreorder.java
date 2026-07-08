@@ -1,4 +1,6 @@
 package binaryTree;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class buildTreePreorder { //O(n)
     static class Node {
@@ -57,19 +59,56 @@ public class buildTreePreorder { //O(n)
             System.out.print(root.data+" ");
             
         }
+
+        // Level order traversals
+        public static void levelOrder(Node root){ //O(n)
+            if (root == null) {
+                return;
+            }
+
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while (!q.isEmpty()) {
+                Node currNode = q.remove();
+                if (currNode == null) {
+                    System.out.println();
+                    if (q.isEmpty()) {
+                        break;
+                    } else {
+                        q.add(null);
+                    }
+                } else {
+                    System.out.print(currNode.data+" ");
+                    if (currNode.left != null) {
+                        q.add(currNode.left);
+                    }
+                    if (currNode.right != null) {
+                        q.add(currNode.right);
+                    }
+                }
+            }
+        }
     }
 
 
     public static void main(String[] args) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
-        BinaryTree tree =  new BinaryTree();
+        // BinaryTree tree =  new BinaryTree();
         Node root = BinaryTree.buildTree(nodes);
-        // System.out.println("Preorder traversal of the constructed tree: " + root.data);
+        System.out.println("Preorder traversal of the constructed tree: " + root.data);
 
-        tree.preOrder(root);
+        System.out.print("Pre Order Traversal : "); 
+        BinaryTree.preOrder(root);
         System.out.println();
-        tree.inOrder(root);
+        System.out.print("In Order Traversal : ");
+        BinaryTree.inOrder(root);
         System.out.println();
-        tree.postOrder(root);
+        System.out.print("Post Order Traversal : ");
+        BinaryTree.postOrder(root);
+        System.out.println();
+        System.out.println("Level Order Traversal : ");
+        BinaryTree.levelOrder(root);
     }
 }

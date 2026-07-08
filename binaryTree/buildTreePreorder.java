@@ -35,6 +35,16 @@ public class buildTreePreorder { //O(n)
             preOrder(root.left);
             preOrder(root.right);
         }
+
+        //inorder traversal
+        public static void inOrder(Node root){ //O(n)
+            if (root == null) {
+                return;
+            }
+            inOrder(root.left);
+            System.out.print(root.data+" ");
+            inOrder(root.right);
+        }
     }
 
 
@@ -44,6 +54,7 @@ public class buildTreePreorder { //O(n)
         Node root = BinaryTree.buildTree(nodes);
         // System.out.println("Preorder traversal of the constructed tree: " + root.data);
 
-        tree.preOrder(root);
+        // tree.preOrder(root);
+        tree.inOrder(root);
     }
 }

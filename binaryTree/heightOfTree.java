@@ -22,6 +22,16 @@ public class heightOfTree {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
+    // height calculate In Edge Form
+    public static int heightInEdgeForm(Node root) {
+        if (root == null) {
+            return -1;
+        }
+        int leftHeight = heightInEdgeForm(root.left);
+        int rightHeight = heightInEdgeForm(root.right);
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
     public static void main(String[] args) {
         /*
                     1
@@ -39,6 +49,7 @@ public class heightOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println("Height of the tree is: " + heightInNodeForm(root));
+        System.out.println("Height of the tree in form of Node is: " + heightInNodeForm(root));
+        System.out.println("Height of the tree in form of Edge is: " + heightInEdgeForm(root));
     }
 }

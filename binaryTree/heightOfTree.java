@@ -12,12 +12,13 @@ public class heightOfTree {
         }
     }
 
-    public static int heightInNodeGorm(Node root) {
+    // height calculate In Node Form
+    public static int heightInNodeForm(Node root) {
         if (root == null) {
             return 0;
         }
-        int leftHeight = heightInNodeGorm(root.left);
-        int rightHeight = heightInNodeGorm(root.right);
+        int leftHeight = heightInNodeForm(root.left);
+        int rightHeight = heightInNodeForm(root.right);
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
@@ -38,6 +39,6 @@ public class heightOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println("Height of the tree is: " + heightInNodeGorm(root));
+        System.out.println("Height of the tree is: " + heightInNodeForm(root));
     }
 }

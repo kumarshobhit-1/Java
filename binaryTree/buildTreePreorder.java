@@ -27,7 +27,7 @@ public class buildTreePreorder { //O(n)
         }
 
         //preorder traversal
-        public static void preOrder(Node root){
+        public static void preOrder(Node root){ //O(n)
             if (root == null) {
                 return;
             }

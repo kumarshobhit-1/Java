@@ -38,6 +38,31 @@ public class diameterOfTree {
         return Math.max(selfDiameter, Math.max(leftDiameter, rightDiameter));
     }
     
+    //diameter calculate with O(n) time complexity-------------------------------------------------------------------------------------------
+    static class TreeInfo {
+        int diameter;
+        int height;
+
+        TreeInfo(int diameter, int height) {
+            this.diameter = diameter;
+            this.height = height;
+        }
+    }
+
+    public static TreeInfo diameterOptimized(Node root) {
+        if (root == null) {
+            return new TreeInfo(0, 0);
+        }
+        TreeInfo left = diameterOptimized(root.left);
+        TreeInfo right = diameterOptimized(root.right);
+
+        int selfDiameter = left.height + right.height + 1;
+        int maxDiameter = Math.max(selfDiameter, Math.max(left.diameter, right.diameter));
+        int height = Math.max(left.height, right.height) + 1;
+
+        return new TreeInfo(maxDiameter, height);
+    }
+
 
     public static void main(String[] args) {
         /*
@@ -56,5 +81,6 @@ public class diameterOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         System.out.println("Diameter of the binary tree with O(n^2) time complexity is: " + diameter(root));
+        System.out.println("Diameter of the binary tree with O(n) time complexity is: " + diameterOptimized(root).diameter);
     }
 }

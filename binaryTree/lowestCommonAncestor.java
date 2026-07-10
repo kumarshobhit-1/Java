@@ -32,6 +32,7 @@ public class lowestCommonAncestor {
         return false;
     }
 
+    // Approach 1: Store the path of both nodes and then compare the paths to find the last common node
     public static Node findLowestCommonAncestor(Node root, int n1, int n2) { // O(n)
         ArrayList<Node> path1 = new ArrayList<>();
         ArrayList<Node> path2 = new ArrayList<>();
@@ -52,6 +53,23 @@ public class lowestCommonAncestor {
         return lca;
     }
 
+    // Approach 2: Recursive approach to find the lowest common ancestor without storing paths
+    public static Node findLowestCommonAncestorRecursive(Node root, int n1, int n2) { // O(n)
+        if (root == null || root.data == n1 || root.data == n2) {
+            return root;
+        };
+
+        Node leftLCA = findLowestCommonAncestorRecursive(root.left, n1, n2);
+        Node rightLCA = findLowestCommonAncestorRecursive(root.right, n1, n2);
+
+        if (leftLCA == null) {
+            return rightLCA;
+        }
+        if (rightLCA == null) {
+            return leftLCA;
+        }
+        return root;
+    }
     public static void main(String[] args) {
         /* main tree
                     1
@@ -74,5 +92,8 @@ public class lowestCommonAncestor {
 
         Node lca = findLowestCommonAncestor(root, n1, n2);
         System.out.println("Lowest Common Ancestor of " + n1 + " and " + n2 + " is: " + lca.data);
+
+        Node lca2 = findLowestCommonAncestorRecursive(root, n1, n2);
+        System.out.println("Lowest Common Ancestor (Recursive) of " + n1 + " and " + n2 + " is: " + lca2.data);
     }
 }

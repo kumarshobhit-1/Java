@@ -63,7 +63,7 @@ public class sizeOfLargestBSTInBT {
         root.right.right.left = new Node(65);
         root.right.right.right = new Node(80);
 
-        Info inf0 = largestBST(root);
+        largestBST(root);
         System.out.println("largest BST size = "+ maxBST);
 
     }

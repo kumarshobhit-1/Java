@@ -109,6 +109,24 @@ public class deleteBST {
         printRootTOLeaf(root.right, path);
         path.remove(path.size()-1);
     }
+
+    // is Valid BST
+    public static boolean isValidBST(Node root, Node min, Node max){
+        if (root == null) {
+            return true;
+        }
+
+        if (min != null && root.data <= min.data) {
+            return false;
+        } else if (max != null && root.data >= max.data) {
+            return false;
+        }
+
+        boolean left = isValidBST(root.left, min, root);
+        boolean right = isValidBST(root.right, root, max);
+
+        return left && right;
+    }
     public static void main(String[] args) {
         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
         Node root = null;
@@ -129,5 +147,15 @@ public class deleteBST {
         printInRange(root, k1, k2);
 
         printRootTOLeaf(root, new ArrayList<>());
+
+        // if (isValidBST(root, null, null)) {
+        //     System.out.println("valid");
+        // } else {
+        //     System.out.println("not valid");
+        // }
+
+        System.out.println(isValidBST(root, null, null) ? "valid" : "not valid");
+        
+
     }
 }

@@ -1,5 +1,5 @@
 package binarySearchTree;
-
+import java.util.ArrayList;
 public class deleteBST {
     static class Node {
         int data;
@@ -86,6 +86,29 @@ public class deleteBST {
             printInRange(root.right, k1, k2);
         }
     }
+
+    public static void printPath(ArrayList<Integer> path){
+        for(int i=0; i<path.size(); i++){
+            System.out.print(path.get(i)+"->");
+        }
+        System.out.println("NULL");
+    }
+
+    // Print root to leaf all path
+    public static void printRootTOLeaf(Node root, ArrayList<Integer> path){
+        if (root ==  null) {
+            return;
+        }
+
+        path.add(root.data);
+        if (root.left == null && root.right == null) {
+            printPath(path);
+        }
+
+        printRootTOLeaf(root.left, path);
+        printRootTOLeaf(root.right, path);
+        path.remove(path.size()-1);
+    }
     public static void main(String[] args) {
         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
         Node root = null;
@@ -104,5 +127,7 @@ public class deleteBST {
 
         int k1 = 5, k2 = 12;
         printInRange(root, k1, k2);
+
+        printRootTOLeaf(root, new ArrayList<>());
     }
 }

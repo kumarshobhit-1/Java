@@ -3,7 +3,7 @@ package hashing;
 import java.util.TreeMap;
 
 public class treeHashMap {
-    public static void main(String[] args) {
+    public static void main(String[] args) { // keys are sorted -> put, get, remove are O(logn)
         TreeMap<String, Integer> hm = new TreeMap<>(); 
 
         //insert O(1)

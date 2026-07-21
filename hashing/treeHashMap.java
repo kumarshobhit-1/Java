@@ -1,10 +1,10 @@
 package hashing;
 
-import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
-public class linkedHashMap { // order me print hota hai(doubly linked list use hota hai)
+public class treeHashMap {
     public static void main(String[] args) {
-        LinkedHashMap<String, Integer> hm = new LinkedHashMap<>();
+        TreeMap<String, Integer> hm = new TreeMap<>(); 
 
         //insert O(1)
         hm.put("China", 150);

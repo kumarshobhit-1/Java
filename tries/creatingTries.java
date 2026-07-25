@@ -25,7 +25,19 @@ public class creatingTries {
         curr.eow = true;
     }
 
-    
+    public static boolean search(String key){
+        Node curr = root;
+        for(int level=0; level<key.length(); level++){
+            int idx = key.charAt(level) - 'a';
+            if (curr.children[idx] == null) {
+                return false;
+            }
+            curr = curr.children[idx];
+        }
+ 
+        return curr.eow = true;
+        
+    }
     public static Node root = new Node();
 
     public static void main(String[] args) {
@@ -35,5 +47,9 @@ public class creatingTries {
             insert(words[i]);
         }
 
+        System.out.println(search("thee"));
+        System.out.println(search("thor"));
+        System.out.println(search("any"));
+        System.out.println(search("an"));
     }
 }

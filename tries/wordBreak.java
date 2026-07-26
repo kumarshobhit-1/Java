@@ -1,6 +1,6 @@
 package tries;
 
-public class creatingTries {
+public class wordBreak {
     static class Node {
         Node children[] = new Node[26];
         boolean eow = false;
@@ -40,18 +40,28 @@ public class creatingTries {
         return curr.eow = true;
         
     }
-    
 
-    public static void main(String[] args) {
-        String words[] = {"the","a","there","their","any","thee",};
-
-        for(int i=0; i<words.length; i++){
-            insert(words[i]);
+    public static boolean wordBreaks(String key){ //O(L) -> L -  is length of key
+        if (key.length() == 0) {
+            return true;
         }
 
-        System.out.println(search("thee"));
-        System.out.println(search("thor"));
-        System.out.println(search("any"));
-        System.out.println(search("an"));
+        for(int i=1; i<=key.length(); i++){
+            if (search(key.substring(0, i)) && wordBreaks(key.substring(i))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+    public static void main(String[] args) {
+        String arr[] = {"i", "like", "sam", "samsung", "mobile", "ice"};
+        for(int i=0; i<arr.length; i++){
+            insert(arr[i]);
+        }
+
+        String key = "ilikesamsung";
+        System.out.println(wordBreaks(key));
     }
 }

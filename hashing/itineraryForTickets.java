@@ -27,7 +27,7 @@ public class itineraryForTickets {
 
         String start = getStart(tickets);
         System.out.print(start);
-        for (String key : tickets.keySet()) {
+        for (int i = 0; i < tickets.size(); i++) {
             System.out.print(" -> " + tickets.get(start));
             start = tickets.get(start);
         }

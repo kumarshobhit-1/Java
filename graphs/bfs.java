@@ -45,9 +45,18 @@ public class bfs {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    public static void bredthFirstSearch(ArrayList<Edge>[] graph){ //O(n) -> linear time complexity => O(V+E)
-        Queue<Integer> q = new LinkedList<>();
+    public static void bredthFirstSearch(ArrayList<Edge>[] graph){
         boolean visit[] = new boolean[graph.length];
+        for(int i=0; i<graph.length; i++){
+            if (!visit[i]) {
+                bredthFirstSearchUtil(graph, visit);
+            }
+        }
+    }
+
+
+    public static void bredthFirstSearchUtil(ArrayList<Edge>[] graph, boolean visit[]){ //O(n) -> linear time complexity => O(V+E)
+        Queue<Integer> q = new LinkedList<>();
         q.add(0); //source = 0
 
         while (!q.isEmpty()) {
